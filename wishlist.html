@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist - Book Nest</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .wishlist-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 50px;
+        }
+        
+        .wishlist-empty {
+            text-align: center;
+            padding: 50px 0;
+        }
+        
+        .wishlist-empty i {
+            font-size: 60px;
+            color: #ff4f8a;
+            margin-bottom: 20px;
+        }
+        
+        .wishlist-empty h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #5d3fd3;
+        }
+        
+        .wishlist-empty p {
+            margin-bottom: 30px;
+            color: #3a3042;
+        }
+        
+        .wishlist-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+        }
+        
+        .wishlist-table th {
+            background-color: #d8ccff;
+            color: #5d3fd3;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .wishlist-table td {
+            padding: 15px;
+            border-bottom: 1px solid #d8ccff;
+        }
+        
+        .wishlist-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .wishlist-item img {
+            width: 80px;
+            height: 120px;
+            object-fit: cover;
+            margin-right: 15px;
+            border-radius: 5px;
+        }
+        
+        .item-details h3 {
+            margin-bottom: 5px;
+            color: #5d3fd3;
+        }
+        
+        .item-details p {
+            color: #888;
+            font-style: italic;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .add-to-cart-btn {
+            background-color: #8a4fff;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .add-to-cart-btn:hover {
+            background-color: #6a3adf;
+        }
+        
+        .remove-btn {
+            background: none;
+            border: none;
+            color: #ff4f8a;
+            cursor: pointer;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        
+        .remove-btn:hover {
+            color: #e63e7b;
+        }
+        
+        .continue-shopping {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .continue-shopping a {
+            color: #5d3fd3;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        
+        .continue-shopping a:hover {
+            color: #8a4fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Book Nest</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="cart.html">Cart <i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="wishlist.html" class="active">Wishlist <i class="fas fa-heart"></i></a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="category-header">
+        <h2>Your Wishlist</h2>
+        <p>Books you've saved for later. Add them to your cart when you're ready to purchase.</p>
+    </section>
+
+    <div class="wishlist-container">
+        <!-- Wishlist with items (default view) -->
+        <div id="wishlistWithItems">
+            <table class="wishlist-table">
+                <thead>
+                    <tr>
+                        <th>Book</th>
+                        <th>Price</th>
+                        <th>Added On</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="wishlist-item">
+                                <img src="https://m.media-amazon.com/images/I/71FxgtFKcQL._AC_UF1000,1000_QL80_.jpg" alt="To Kill a Mockingbird">
+                                <div class="item-details">
+                                    <h3>To Kill a Mockingbird</h3>
+                                    <p>Harper Lee</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>$12.99</td>
+                        <td>June 8, 2025</td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                                <button class="remove-btn"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="wishlist-item">
+                                <img src="https://m.media-amazon.com/images/I/91+6YUUbMpL._AC_UF1000,1000_QL80_.jpg" alt="The Norse Myths">
+                                <div class="item-details">
+                                    <h3>The Norse Myths</h3>
+                                    <p>Kevin Crossley-Holland</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>$14.99</td>
+                        <td>June 7, 2025</td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                                <button class="remove-btn"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="wishlist-item">
+                                <img src="https://m.media-amazon.com/images/I/713jIoMO3UL._AC_UF1000,1000_QL80_.jpg" alt="Sapiens">
+                                <div class="item-details">
+                                    <h3>Sapiens: A Brief History of Humankind</h3>
+                                    <p>Yuval Noah Harari</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>$15.99</td>
+                        <td>June 5, 2025</td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                                <button class="remove-btn"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="continue-shopping">
+                <a href="index.html">Continue Shopping</a>
+            </div>
+        </div>
+
+        <!-- Empty wishlist (hidden by default, toggle with JavaScript in a real implementation) -->
+        <div id="emptyWishlist" style="display: none;">
+            <div class="wishlist-empty">
+                <i class="fas fa-heart"></i>
+                <h2>Your wishlist is empty</h2>
+                <p>Looks like you haven't added any books to your wishlist yet.</p>
+                <a href="index.html" class="btn">Browse Books</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Book Nest</h3>
+                <p>Your destination for quality books across all genres.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="help.html">Help</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Book Street, Reading City</p>
+                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@booknest.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Book Nest. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple wishlist functionality for demonstration
+        document.addEventListener('DOMContentLoaded', function() {
+            const removeButtons = document.querySelectorAll('.remove-btn');
+            const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+            
+            removeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const row = this.closest('tr');
+                    row.remove();
+                    
+                    // Check if wishlist is empty
+                    const remainingItems = document.querySelectorAll('.wishlist-table tbody tr');
+                    if (remainingItems.length === 0) {
+                        document.getElementById('wishlistWithItems').style.display = 'none';
+                        document.getElementById('emptyWishlist').style.display = 'block';
+                    }
+                });
+            });
+            
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    alert('Item added to cart!');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

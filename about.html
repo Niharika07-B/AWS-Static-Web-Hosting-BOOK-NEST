@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Book Nest</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .about-section {
+            padding: 80px 50px;
+            background-color: #f8f5ff;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-text h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #5d3fd3;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .team-section {
+            padding: 80px 50px;
+            background-color: #d8ccff;
+            text-align: center;
+        }
+        
+        .team-section h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #5d3fd3;
+        }
+        
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .team-member {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .team-member img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .team-member-info {
+            padding: 20px;
+        }
+        
+        .team-member-info h3 {
+            margin-bottom: 5px;
+            color: #5d3fd3;
+        }
+        
+        .team-member-info p {
+            color: #888;
+            margin-bottom: 15px;
+        }
+        
+        .team-member-info .social-icons a {
+            color: #8a4fff;
+            margin: 0 5px;
+            font-size: 18px;
+        }
+        
+        .values-section {
+            padding: 80px 50px;
+            text-align: center;
+        }
+        
+        .values-section h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #5d3fd3;
+        }
+        
+        .values-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .value-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        
+        .value-card i {
+            font-size: 40px;
+            color: #8a4fff;
+            margin-bottom: 20px;
+        }
+        
+        .value-card h3 {
+            margin-bottom: 15px;
+            color: #5d3fd3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Book Nest</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="cart.html">Cart <i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="wishlist.html">Wishlist <i class="fas fa-heart"></i></a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="category-header">
+        <h2>About Book Nest</h2>
+        <p>Learn more about our passion for books and our mission to connect readers with great literature.</p>
+    </section>
+
+    <section class="about-section">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Our Story</h2>
+                <p>Book Nest was founded in 2020 with a simple mission: to create a welcoming space for book lovers to discover new reads and revisit timeless classics. What started as a small online bookstore has grown into a community of passionate readers from around the world.</p>
+                <p>We believe that books have the power to transform lives, spark imagination, and foster empathy. That's why we carefully curate our collection to include diverse voices and perspectives across all genres.</p>
+                <p>Our team consists of dedicated bibliophiles who are committed to helping you find your next great read. Whether you're looking for a gripping novel, an informative non-fiction book, an ancient classic, or tales from mythology, we've got something for every reader.</p>
+                <p>At Book Nest, we're not just selling books—we're sharing our love for literature and building a community of readers who appreciate the magic of storytelling.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <h2>Meet Our Team</h2>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" alt="Sarah Johnson">
+                <div class="team-member-info">
+                    <h3>Sarah Johnson</h3>
+                    <p>Founder & CEO</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" alt="David Chen">
+                <div class="team-member-info">
+                    <h3>David Chen</h3>
+                    <p>Head of Curation</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" alt="Amara Okafor">
+                <div class="team-member-info">
+                    <h3>Amara Okafor</h3>
+                    <p>Customer Experience</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" alt="Miguel Sanchez">
+                <div class="team-member-info">
+                    <h3>Miguel Sanchez</h3>
+                    <p>Rare Books Specialist</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <h2>Our Values</h2>
+        <div class="values-container">
+            <div class="value-card">
+                <i class="fas fa-book-reader"></i>
+                <h3>Passion for Literature</h3>
+                <p>We believe in the transformative power of books and are committed to sharing our love for reading with our community.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-hands-helping"></i>
+                <h3>Customer Service</h3>
+                <p>We strive to provide exceptional service and personalized recommendations to help you discover your next favorite book.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-globe-americas"></i>
+                <h3>Diversity & Inclusion</h3>
+                <p>We celebrate diverse voices and perspectives, ensuring our collection represents a wide range of experiences and cultures.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-seedling"></i>
+                <h3>Sustainability</h3>
+                <p>We're committed to environmentally responsible practices in our operations and packaging.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Book Nest</h3>
+                <p>Your destination for quality books across all genres.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="help.html">Help</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Book Street, Reading City</p>
+                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@booknest.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Book Nest. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

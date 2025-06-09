@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Book Nest</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .cart-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 50px;
+        }
+        
+        .cart-empty {
+            text-align: center;
+            padding: 50px 0;
+        }
+        
+        .cart-empty i {
+            font-size: 60px;
+            color: #8a4fff;
+            margin-bottom: 20px;
+        }
+        
+        .cart-empty h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #5d3fd3;
+        }
+        
+        .cart-empty p {
+            margin-bottom: 30px;
+            color: #3a3042;
+        }
+        
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+        }
+        
+        .cart-table th {
+            background-color: #d8ccff;
+            color: #5d3fd3;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .cart-table td {
+            padding: 15px;
+            border-bottom: 1px solid #d8ccff;
+        }
+        
+        .cart-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .cart-item img {
+            width: 80px;
+            height: 120px;
+            object-fit: cover;
+            margin-right: 15px;
+            border-radius: 5px;
+        }
+        
+        .item-details h3 {
+            margin-bottom: 5px;
+            color: #5d3fd3;
+        }
+        
+        .item-details p {
+            color: #888;
+            font-style: italic;
+        }
+        
+        .quantity-control {
+            display: flex;
+            align-items: center;
+        }
+        
+        .quantity-btn {
+            background-color: #d8ccff;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            color: #5d3fd3;
+            font-size: 16px;
+        }
+        
+        .quantity-input {
+            width: 40px;
+            height: 30px;
+            text-align: center;
+            margin: 0 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .remove-btn {
+            background: none;
+            border: none;
+            color: #8a4fff;
+            cursor: pointer;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        
+        .remove-btn:hover {
+            color: #6a3adf;
+        }
+        
+        .cart-summary {
+            background-color: #f8f5ff;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+        
+        .cart-summary h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #5d3fd3;
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #d8ccff;
+        }
+        
+        .summary-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+        
+        .summary-row.total {
+            font-weight: bold;
+            font-size: 18px;
+            color: #5d3fd3;
+        }
+        
+        .checkout-btn {
+            background-color: #8a4fff;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;
+            width: 100%;
+            font-weight: 500;
+            text-align: center;
+        }
+        
+        .checkout-btn:hover {
+            background-color: #6a3adf;
+        }
+        
+        .continue-shopping {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .continue-shopping a {
+            color: #5d3fd3;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        
+        .continue-shopping a:hover {
+            color: #8a4fff;
+        }
+        
+        .promo-code {
+            margin-bottom: 30px;
+        }
+        
+        .promo-code h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #5d3fd3;
+        }
+        
+        .promo-form {
+            display: flex;
+        }
+        
+        .promo-form input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px 0 0 5px;
+            font-size: 16px;
+        }
+        
+        .promo-form button {
+            background-color: #8a4fff;
+            color: #fff;
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .promo-form button:hover {
+            background-color: #6a3adf;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Book Nest</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="cart.html" class="active">Cart <i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="wishlist.html">Wishlist <i class="fas fa-heart"></i></a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="category-header">
+        <h2>Your Shopping Cart</h2>
+        <p>Review your items and proceed to checkout.</p>
+    </section>
+
+    <div class="cart-container">
+        <!-- Cart with items (default view) -->
+        <div id="cartWithItems">
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="cart-item">
+                                <img src="https://m.media-amazon.com/images/I/71FxgtFKcQL._AC_UF1000,1000_QL80_.jpg" alt="To Kill a Mockingbird">
+                                <div class="item-details">
+                                    <h3>To Kill a Mockingbird</h3>
+                                    <p>Harper Lee</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>$12.99</td>
+                        <td>
+                            <div class="quantity-control">
+                                <button class="quantity-btn decrease">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" max="10">
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </td>
+                        <td>$12.99</td>
+                        <td>
+                            <button class="remove-btn"><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="cart-item">
+                                <img src="https://m.media-amazon.com/images/I/91+6YUUbMpL._AC_UF1000,1000_QL80_.jpg" alt="The Norse Myths">
+                                <div class="item-details">
+                                    <h3>The Norse Myths</h3>
+                                    <p>Kevin Crossley-Holland</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>$14.99</td>
+                        <td>
+                            <div class="quantity-control">
+                                <button class="quantity-btn decrease">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" max="10">
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </td>
+                        <td>$14.99</td>
+                        <td>
+                            <button class="remove-btn"><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="promo-code">
+                <h3>Promo Code</h3>
+                <form class="promo-form">
+                    <input type="text" placeholder="Enter promo code">
+                    <button type="submit">Apply</button>
+                </form>
+            </div>
+
+            <div class="cart-summary">
+                <h2>Order Summary</h2>
+                <div class="summary-row">
+                    <span>Subtotal (2 items)</span>
+                    <span>$27.98</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span>$4.99</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax</span>
+                    <span>$2.80</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span>$35.77</span>
+                </div>
+            </div>
+
+            <a href="#" class="checkout-btn">Proceed to Checkout</a>
+
+            <div class="continue-shopping">
+                <a href="index.html">Continue Shopping</a>
+            </div>
+        </div>
+
+        <!-- Empty cart (hidden by default, toggle with JavaScript in a real implementation) -->
+        <div id="emptyCart" style="display: none;">
+            <div class="cart-empty">
+                <i class="fas fa-shopping-cart"></i>
+                <h2>Your cart is empty</h2>
+                <p>Looks like you haven't added any books to your cart yet.</p>
+                <a href="index.html" class="btn">Browse Books</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Book Nest</h3>
+                <p>Your destination for quality books across all genres.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="help.html">Help</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Book Street, Reading City</p>
+                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@booknest.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Book Nest. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple cart functionality for demonstration
+        document.addEventListener('DOMContentLoaded', function() {
+            // Quantity buttons
+            const decreaseButtons = document.querySelectorAll('.decrease');
+            const increaseButtons = document.querySelectorAll('.increase');
+            const removeButtons = document.querySelectorAll('.remove-btn');
+            
+            decreaseButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const input = this.nextElementSibling;
+                    let value = parseInt(input.value);
+                    if (value > 1) {
+                        input.value = value - 1;
+                        updateCartTotals();
+                    }
+                });
+            });
+            
+            increaseButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const input = this.previousElementSibling;
+                    let value = parseInt(input.value);
+                    if (value < 10) {
+                        input.value = value + 1;
+                        updateCartTotals();
+                    }
+                });
+            });
+            
+            removeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const row = this.closest('tr');
+                    row.remove();
+                    updateCartTotals();
+                    
+                    // Check if cart is empty
+                    const remainingItems = document.querySelectorAll('.cart-table tbody tr');
+                    if (remainingItems.length === 0) {
+                        document.getElementById('cartWithItems').style.display = 'none';
+                        document.getElementById('emptyCart').style.display = 'block';
+                    }
+                });
+            });
+            
+            function updateCartTotals() {
+                // This would be more complex in a real implementation
+                // Just a placeholder for demonstration
+                console.log('Cart updated');
+            }
+        });
+    </script>
+</body>
+</html>

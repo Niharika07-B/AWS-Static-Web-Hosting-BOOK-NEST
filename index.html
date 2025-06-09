@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Nest - Your Book Paradise</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Book Nest</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="cart.html">Cart <i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="wishlist.html">Wishlist <i class="fas fa-heart"></i></a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Discover Your Next Great Read</h2>
+            <p>Explore our carefully curated collection of books across various genres</p>
+            <a href="#categories" class="btn">Browse Categories</a>
+        </div>
+    </section>
+
+    <section id="categories" class="categories">
+        <h2>Book Categories</h2>
+        <div class="category-container">
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Fiction Books">
+                <h3>Fiction Books</h3>
+                <p>Modern and classic fictional masterpieces</p>
+                <a href="fiction.html" class="btn">Explore</a>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Non-Fiction Books">
+                <h3>Non-Fiction Books</h3>
+                <p>Enlightening reads on real-world topics</p>
+                <a href="non-fiction.html" class="btn">Explore</a>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Ancient Books">
+                <h3>Ancient Books</h3>
+                <p>Timeless classics from the ancient world</p>
+                <a href="ancient.html" class="btn">Explore</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured">
+        <h2>Featured Books</h2>
+        <div class="book-slider">
+            <div class="book-card">
+                <img src="https://m.media-amazon.com/images/I/71FxgtFKcQL._AC_UF1000,1000_QL80_.jpg" alt="To Kill a Mockingbird">
+                <h3>To Kill a Mockingbird</h3>
+                <p class="author">Harper Lee</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>(4.5/5)</span>
+                </div>
+                <p class="price">$12.99</p>
+                <div class="card-buttons">
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="https://m.media-amazon.com/images/I/713jIoMO3UL._AC_UF1000,1000_QL80_.jpg" alt="Sapiens">
+                <h3>Sapiens: A Brief History of Humankind</h3>
+                <p class="author">Yuval Noah Harari</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>(4.8/5)</span>
+                </div>
+                <p class="price">$15.99</p>
+                <div class="card-buttons">
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="https://m.media-amazon.com/images/I/91+6YUUbMpL._AC_UF1000,1000_QL80_.jpg" alt="The Norse Myths">
+                <h3>The Norse Myths</h3>
+                <p class="author">Kevin Crossley-Holland</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>(4.5/5)</span>
+                </div>
+                <p class="price">$14.99</p>
+                <div class="card-buttons">
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>Stay updated with our latest book releases and special offers</p>
+        <form>
+            <input type="email" placeholder="Enter your email address">
+            <button type="submit" class="btn">Subscribe</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Book Nest</h3>
+                <p>Your destination for quality books across all genres.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="help.html">Help</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Book Street, Reading City</p>
+                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@booknest.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Book Nest. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add wishlist functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const wishlistButtons = document.querySelectorAll('.wishlist-btn');
+            
+            wishlistButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    if (this.classList.contains('active')) {
+                        this.style.backgroundColor = '#ff4f8a';
+                        this.style.color = '#fff';
+                        alert('Added to your wishlist!');
+                    } else {
+                        this.style.backgroundColor = '#fff';
+                        this.style.color = '#ff4f8a';
+                        alert('Removed from your wishlist!');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

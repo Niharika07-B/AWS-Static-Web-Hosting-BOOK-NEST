@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Book Nest</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .feedback-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 50px;
+        }
+        
+        .feedback-form {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feedback-form h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #5d3fd3;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #3a3042;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #3a3042;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .rating-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+        
+        .rating-label {
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #3a3042;
+        }
+        
+        .star-rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+        
+        .star-rating input {
+            display: none;
+        }
+        
+        .star-rating label {
+            cursor: pointer;
+            font-size: 30px;
+            color: #ddd;
+            padding: 0 5px;
+        }
+        
+        .star-rating label:hover,
+        .star-rating label:hover ~ label,
+        .star-rating input:checked ~ label {
+            color: #f8b400;
+        }
+        
+        .checkbox-group {
+            margin-bottom: 20px;
+        }
+        
+        .checkbox-group label {
+            font-weight: 500;
+            color: #3a3042;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .checkbox-option input {
+            margin-right: 10px;
+        }
+        
+        .submit-btn {
+            background-color: #8a4fff;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;
+            width: 100%;
+            font-weight: 500;
+        }
+        
+        .submit-btn:hover {
+            background-color: #6a3adf;
+        }
+        
+        .thank-you {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .thank-you h3 {
+            font-size: 24px;
+            color: #5d3fd3;
+            margin-bottom: 15px;
+        }
+        
+        .thank-you p {
+            color: #3a3042;
+        }
+        
+        .price-feedback {
+            margin-bottom: 20px;
+            border: 1px solid #d8ccff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        
+        .price-feedback h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #5d3fd3;
+        }
+        
+        .price-slider {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        
+        .price-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .price-value {
+            text-align: center;
+            font-weight: bold;
+            color: #5d3fd3;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Book Nest</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="cart.html">Cart <i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="wishlist.html">Wishlist <i class="fas fa-heart"></i></a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="feedback.html" class="active">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="category-header">
+        <h2>Share Your Feedback</h2>
+        <p>We value your opinion and are constantly striving to improve our services.</p>
+    </section>
+
+    <div class="feedback-container">
+        <div class="feedback-form">
+            <h2>Feedback Form</h2>
+            <form id="feedbackForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="rating-container">
+                    <span class="rating-label">How would you rate your overall experience with Book Nest?</span>
+                    <div class="star-rating">
+                        <input type="radio" id="star5" name="rating" value="5">
+                        <label for="star5" title="5 stars"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4" title="4 stars"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3" title="3 stars"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2" title="2 stars"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1" title="1 star"><i class="fas fa-star"></i></label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="feedbackType">What type of feedback would you like to provide?</label>
+                    <select id="feedbackType" name="feedbackType" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="website">Website Experience</option>
+                        <option value="products">Book Selection</option>
+                        <option value="customer-service">Customer Service</option>
+                        <option value="shipping">Shipping & Delivery</option>
+                        <option value="pricing">Book Pricing</option>
+                        <option value="suggestion">Suggestion</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="price-feedback">
+                    <h3>Book Pricing Feedback</h3>
+                    <p>How would you rate our book prices compared to other retailers?</p>
+                    <div class="price-labels">
+                        <span>Too Expensive</span>
+                        <span>Just Right</span>
+                        <span>Great Value</span>
+                    </div>
+                    <input type="range" min="1" max="5" value="3" class="price-slider" id="priceRating">
+                    <div class="price-value">Fair (3/5)</div>
+                    
+                    <div class="form-group" style="margin-top: 20px;">
+                        <label for="priceComments">Additional comments about our pricing:</label>
+                        <textarea id="priceComments" name="priceComments"></textarea>
+                    </div>
+                </div>
+                
+                <div class="checkbox-group">
+                    <label>Which aspects of our service did you enjoy? (Select all that apply)</label>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="aspect1" name="aspects" value="book-selection">
+                        <label for="aspect1">Book Selection</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="aspect2" name="aspects" value="website-usability">
+                        <label for="aspect2">Website Usability</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="aspect3" name="aspects" value="prices">
+                        <label for="aspect3">Prices</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="aspect4" name="aspects" value="shipping-speed">
+                        <label for="aspect4">Shipping Speed</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="aspect5" name="aspects" value="customer-service">
+                        <label for="aspect5">Customer Service</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="feedback">Please share your detailed feedback or suggestions:</label>
+                    <textarea id="feedback" name="feedback" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="improvements">How can we improve your experience?</label>
+                    <textarea id="improvements" name="improvements"></textarea>
+                </div>
+                
+                <div class="checkbox-option">
+                    <input type="checkbox" id="contact" name="contact">
+                    <label for="contact">I would like to be contacted about my feedback</label>
+                </div>
+                
+                <button type="submit" class="submit-btn">Submit Feedback</button>
+            </form>
+            
+            <div class="thank-you" id="thankYouMessage" style="display: none;">
+                <h3>Thank You for Your Feedback!</h3>
+                <p>We appreciate you taking the time to share your thoughts with us. Your feedback helps us improve our services.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Book Nest</h3>
+                <p>Your destination for quality books across all genres.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="help.html">Help</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Book Street, Reading City</p>
+                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@booknest.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Book Nest. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('feedbackForm').style.display = 'none';
+            document.getElementById('thankYouMessage').style.display = 'block';
+        });
+        
+        // Price slider functionality
+        const priceSlider = document.getElementById('priceRating');
+        const priceValue = document.querySelector('.price-value');
+        
+        priceSlider.addEventListener('input', function() {
+            let value = this.value;
+            let description;
+            
+            switch(value) {
+                case '1':
+                    description = 'Too Expensive (1/5)';
+                    break;
+                case '2':
+                    description = 'Somewhat Expensive (2/5)';
+                    break;
+                case '3':
+                    description = 'Fair (3/5)';
+                    break;
+                case '4':
+                    description = 'Good Value (4/5)';
+                    break;
+                case '5':
+                    description = 'Excellent Value (5/5)';
+                    break;
+            }
+            
+            priceValue.textContent = description;
+        });
+    </script>
+</body>
+</html>
