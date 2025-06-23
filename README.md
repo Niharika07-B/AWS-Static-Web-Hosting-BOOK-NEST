@@ -19,15 +19,25 @@
 BookNest/
 │
 ├── index.html # Homepage
+
 ├── about.html # About the store
+
 ├── ancient.html # Ancient books section
+
 ├── cart.html # Shopping cart page
+
 ├── contact.html # Contact information
+
 ├── feedback.html # User feedback form
+
 ├── fiction.html # Fiction books section
+
 ├── help.html # Help and FAQs
+
 ├── non-fiction.html # Non-fiction books section
+
 ├── wishlist.html # Wishlist page
+
 ├── styles.css # Stylesheet
 
 
