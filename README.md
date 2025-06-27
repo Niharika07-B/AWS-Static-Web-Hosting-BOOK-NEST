@@ -21,7 +21,8 @@
 ## 📁 Project Structure
 
 BookNest/
-│
+
+
 ├── index.html # Homepage
 
 ├── about.html # About the store
