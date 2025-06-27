@@ -11,7 +11,7 @@
 
   or
 
-  https://booknest-niharika.s3.us-east-1.amazonaws.com/index.html
+  https://booknest-niharika.s3.us-east-1.amazonaws.com/
 
 
 - 🔵 **Hosted on AWS EC2**:  
