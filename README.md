@@ -9,10 +9,9 @@
 - 🟠 **Hosted on AWS S3**:  
   [http://booknest-niharika.s3-website-us-east-1.amazonaws.com/](http://booknest-niharika.s3-website-us-east-1.amazonaws.com/)
 
-  or
+     or
 
-  https://booknest-niharika.s3.us-east-1.amazonaws.com/
-
+  https://booknest-niharika.s3.us-east-1.amazonaws.com/index.html  
 
 - 🔵 **Hosted on AWS EC2**:  
   [http://18.61.77.15/](http://18.61.77.15/)
