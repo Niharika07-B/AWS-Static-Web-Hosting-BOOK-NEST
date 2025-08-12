@@ -4,7 +4,7 @@
 
 ---
 
-## 🌐 Live Demo
+# 🌐 Live Demo
 
 - 🟠 **Hosted on AWS S3**:  
   [http://booknest-niharika.s3-website-us-east-1.amazonaws.com/](http://booknest-niharika.s3-website-us-east-1.amazonaws.com/)
@@ -18,37 +18,26 @@
 
 ---
 
-## 📁 Project Structure
-
+# 📁 Project Structure
+```
 BookNest/
+│   ├── index.html          # 🌐 Homepage
+│   ├── about.html          # ℹ️ About the store
+│   ├── ancient.html        # 📜 Ancient books section
+│   ├── cart.html           # 🛒 Shopping cart page
+│   ├── contact.html        # 📇 Contact information
+│   ├── feedback.html       # 📝 User feedback form
+│   ├── fiction.html        # 📖 Fiction books section
+│   ├── help.html           # ❓ Help and FAQs
+│   ├── non-fiction.html    # 📚 Non-fiction books section
+│   ├── wishlist.html       # ❤️ Wishlist page
+│   ├── styles.css          # 🎨 Frontend styles
+└── README.md               # 📘 Project overview
 
-
-├── index.html # Homepage
-
-├── about.html # About the store
-
-├── ancient.html # Ancient books section
-
-├── cart.html # Shopping cart page
-
-├── contact.html # Contact information
-
-├── feedback.html # User feedback form
-
-├── fiction.html # Fiction books section
-
-├── help.html # Help and FAQs
-
-├── non-fiction.html # Non-fiction books section
-
-├── wishlist.html # Wishlist page
-
-├── styles.css # Stylesheet
-
-
+```
 ---
 
-## 🚀 Deployment
+# 🚀 Deployment
 
 This static website is hosted using:
 
@@ -57,7 +46,7 @@ This static website is hosted using:
 
 ---
 
-## 🛠️ Technologies Used
+# 🛠️ Technologies Used
 
 - HTML5  
 - CSS3  
@@ -66,13 +55,21 @@ This static website is hosted using:
 
 ---
 
-## 📬 Feedback
+# 📬 Feedback
 
 Feel free to open issues or suggestions if you'd like to see improvements or contribute!
 
 ---
 
-## 📄 License
+# 📄 License
 
 This project is open for educational and demo purposes.
 
+---
+
+# ⭐ Support & Connect
+If you found _BookNest_ helpful, inspiring, or just a little bit book-beautiful 📚✨ —
+please consider starring _⭐_ the repo and following me for more projects.
+Your support motivates me to keep building and sharing! 🙌
+
+_Happy reading, happy coding! 🚀_
